@@ -148,6 +148,7 @@
                 align-items: center; /* Centraliza verticalmente */
                 text-align: center; /* Alinha o texto ao centro */
                 flex-direction: column; /* Organiza os elementos verticalmente */
+                min-height: 100vh;
             }
         
             .hero-section h1 {
@@ -159,8 +160,26 @@
             }
         
             .hero-section .container {
-                padding-top: 2rem; /* Ajuste o padding para mobile */
-                padding-bottom: 2rem;
+                padding: 2rem 1rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            /* Ajuste para garantir que o conteúdo fique centralizado */
+            .hero-section h1,
+            .hero-section h2,
+            .hero-section p {
+                width: 100%;
+                text-align: center;
+            }
+        
+            /* Remove o padding lateral no mobile */
+            .hero-section .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
             
             .contact-button {
