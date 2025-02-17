@@ -10,7 +10,7 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(90deg, rgb(0 0 0) 0%, rgb(0 0 0 / 94%) 50%, rgba(0, 0, 0, 0.4) 100%), url(/src/images/direito-previdenciario.jpg);
+    background: linear-gradient(90deg, rgb(0 0 0) 0%, rgb(0 0 0 / 94%) 50%, rgba(0, 0, 0, 0.4) 100%), var(--bg-image);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Esta é a propriedade que faz a mágica acontecer */
@@ -193,7 +193,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .hero-section {
-        background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 94%) 50%, rgba(0, 0, 0, 0.4) 100%), url(/src/images/direito-previdenciario.jpg);
+        background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 94%) 50%, rgba(0, 0, 0, 0.4) 100%), var(--bg-image);;
         background-size: cover;
         background-position: center;
         background-attachment: scroll; /* Remove o efeito parallax em mobile */
