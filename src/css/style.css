@@ -61,14 +61,68 @@ body {
     
 }
 
+.animation-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem 0; /* Changed: removed auto from right margin */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Changed: from center to flex-start */
+}
+
+lord-icon {
+    transition: all 0.5s ease;
+}
+
+/* Controle adicional da animação via CSS */
+.animation-container lord-icon {
+    animation-duration: 3s !important; /* Força uma duração mais longa */
+    animation-timing-function: ease-in-out !important;
+}
+
 .service-card {
     background-color: rgba(30, 30, 30, 0.9);
     border: 1px solid #333;
-    transition: transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
+}
+
+.service-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(218, 165, 32, 0.3);
+}
+
+.service-card.clicked {
+    animation: cardClick 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes cardClick {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.service-card h3 {
+    text-align: left; /* Added: ensure heading is left-aligned */
+}
+
+.service-card p {
+    text-align: left; /* Added: ensure paragraph is left-aligned */
 }
 
 .contact-button {
@@ -214,8 +268,42 @@ footer a:hover {
     }
 
     .service-card {
-        margin-bottom: 1rem; /* Adicione margem entre os cards de serviço */
+        background: rgba(30, 30, 30, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+        opacity: 1;
+        transform: none;
     }
+
+    .service-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Ensure the grid layout works on mobile */
+    .container .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .animation-container {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .golden-text {
+        color: #DAA520;
+    }
+
 
     .about-section .grid {
         grid-template-columns: 1fr; /* Altere o layout para uma coluna em mobile */
